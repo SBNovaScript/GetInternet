@@ -4,5 +4,5 @@ Welcome to Get Internet! This program will tell you if you are connected to the 
 
 *Usage*
 ```shell
-> python Internet.py -w [google/bing/yahoo/duck]
+> python Internet.py -w [google/bing/yahoo/duckduckgo]
 ```
