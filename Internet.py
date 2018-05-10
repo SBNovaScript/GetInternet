@@ -22,12 +22,18 @@ def allowSearching(browser):
         if message == "!quit":
             connected = 0
             searchedItems = -1
+        elif message.startswith("!browser"):
+            space_location = message.find(' ')
+            browser = message[space_location+1:]
+            print("browser changed to {}!".format(message[space_location+1:]))
         else:
-            if browser != "yahoo":
+            searchedItems += 1
+            if browser != "yahoo" and browser != "duckduckgo":
                 webbrowser.open("www.{}.com/search?q={}".format(browser,message))
-            else:
+            elif browser == "duckduckgo":
+                webbrowser.open("www.duckduckgo.com/?q={}".format(message))
+            elif browser == "yahoo":
                 webbrowser.open("www.search.yahoo.com/search?q={}".format(message))
-
 
 
 
